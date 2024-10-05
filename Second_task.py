@@ -1,3 +1,4 @@
+import os
 import time
 
 BLUE = '\u001b[44m'
@@ -7,27 +8,35 @@ RED = '\u001b[41m'
 LIGHT_GREEN = '\u001b[42m'
 YELLOW = '\u001b[43m'
 
-g = 2
-d = 8
-for i in range(13):
-
-    if i < 4:
-        print(f"{" "*(6-i)*2}{LIGHT_GREEN}{" "*(2*(1+2*i))}{END}{" "*(2*(7-2*i))}{LIGHT_GREEN}{" "*(2*(1+2*i))}{END}")
-    
-    
-    elif 4 <= i <= 5:
-        print(f"{" "*2*(6-i)}{LIGHT_GREEN}{" "*(2*(9+2*i))}{END}")
-    
-    
-    elif  i == 6:
-        print(f"{LIGHT_GREEN}{" "*42}{END}")
+Colors = [RED,YELLOW,LIGHT_GREEN]
 
 
-    elif 7 <= i <= 8:
-        print(f"{" "*2*(i-6)}{LIGHT_GREEN}{" "*(2*(33-2*i))}{END}")
-    
+while True:
+    for color in Colors:
+        g = 2
+        d = 8
+        for i in range(13): 
 
-    elif 9 <= i <= 12:
-        print(f"{" "*(i-6)*2}{LIGHT_GREEN}{" "*(2*(i-g))}{END}{" "*(2*(i-d))}{LIGHT_GREEN}{" "*(2*(i-g))}{END}")
-        g += 3
-        d -=1
+            if i < 4:
+                print(f"{" "*(6-i)*2}{color}{" "*(2*(1+2*i))}{END}{" "*(2*(7-2*i))}{color}{" "*(2*(1+2*i))}{END}")
+            
+            
+            elif 4 <= i <= 5:
+                print(f"{" "*2*(6-i)}{color}{" "*(2*(9+2*i))}{END}")
+            
+            
+            elif  i == 6:
+                print(f"{color}{" "*42}{END}")
+
+
+            elif 7 <= i <= 8:
+                print(f"{" "*2*(i-6)}{color}{" "*(2*(33-2*i))}{END}")
+            
+
+            elif 9 <= i <= 12:
+                print(f"{" "*(i-6)*2}{color}{" "*(2*(i-g))}{END}{" "*(2*(i-d))}{color}{" "*(2*(i-g))}{END}")
+                g += 3
+                d -=1
+        time.sleep(2)
+        os.system("cls")
+    time.sleep(2)
