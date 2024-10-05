@@ -8,6 +8,7 @@ RED = '\u001b[41m'
 LIGHT_GREEN = '\u001b[42m'
 YELLOW = '\u001b[43m'
 
+
 Colors = [RED,YELLOW,LIGHT_GREEN]
 
 
@@ -37,6 +38,8 @@ while True:
                 print(f"{" "*(i-6)*2}{color}{" "*(2*(i-g))}{END}{" "*(2*(i-d))}{color}{" "*(2*(i-g))}{END}")
                 g += 3
                 d -=1
+
         time.sleep(2)
         os.system("cls")
+        
     time.sleep(2)
